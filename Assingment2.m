@@ -5,8 +5,9 @@ wc = fc/(fsamp/2);
 ftb = 400;
 Stop_att = 35;
 Pass_rip = 0.1;
+order = 9;
 
-[b,a] = cheby1(8 , Pass_rip, wc);
+[b,a] = cheby1(order , Pass_rip, wc);
 
 [h, w] = freqz(b, a, 1024);
 f = w*fsamp/(2*pi);
